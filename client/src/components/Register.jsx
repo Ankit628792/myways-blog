@@ -21,7 +21,7 @@ function Register() {
 
     if (data.password === data.confirm_password) {
       setIsLoading(true)
-      const res = await fetch('/api/register', {
+      const res = await fetch('https://myways-blog-by-ak.herokuapp.com/api/register', {
         method: 'POST',
         headers: {
           'Content-Type': ' application/json'

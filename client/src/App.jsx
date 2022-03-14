@@ -12,7 +12,7 @@ function App() {
 
   async function hello() {
     setisLoading(true)
-    const res = await fetch('/api/session', {
+    const res = await fetch('https://myways-blog-by-ak.herokuapp.com/api/session', {
       method: 'GET',
       headers: {
         'Content-Type': ' application/json',
@@ -29,12 +29,11 @@ function App() {
     cookies?.user && hello()
   }, [])
 
-  if (isLoading) return <Loader />
-
   return (
     <div className="App w-full max-w-7xl mx-auto">
       <Header />
       <main>
+        {isLoading && <Loader />}
         <Routes>
           <Route path='/' element={<Posts />} />
           <Route path='/register' element={<Register />} />

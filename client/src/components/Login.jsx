@@ -18,7 +18,7 @@ function Login() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setIsLoading(true)
-        const res = await fetch('/api/login', {
+        const res = await fetch('https://myways-blog-by-ak.herokuapp.com/api/login', {
             method: 'POST',
             headers: {
                 'Content-Type': ' application/json'

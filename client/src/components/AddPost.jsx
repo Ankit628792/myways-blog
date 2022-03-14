@@ -28,7 +28,7 @@ function AddPost() {
     const { postId } = useParams()
 
     useEffect(() => {
-        fetch(`/api/singlepost?postId=${postId?.slice(1, postId?.length)}`, { method: 'GET' }).then(res => res.json()).then(data => setPostDetail(data))
+        fetch(`https://myways-blog-by-ak.herokuapp.com/api/singlepost?postId=${postId?.slice(1, postId?.length)}`, { method: 'GET' }).then(res => res.json()).then(data => setPostDetail(data))
     }, [postId])
 
     const uploadImage = async () => {
@@ -76,7 +76,7 @@ function AddPost() {
             const image_url = await uploadImage()
             if (image_url) {
                 setIsSending(true)
-                const res = await fetch('/api/post', {
+                const res = await fetch('https://myways-blog-by-ak.herokuapp.com/api/post', {
                     method: 'POST',
                     headers: {
                         'Content-Type': ' application/json',
@@ -105,7 +105,7 @@ function AddPost() {
         e.preventDefault();
         if (user) {
             setIsSending(true)
-            const res = await fetch(`/api/editpost?postId=${postDetail?.postId}`, {
+            const res = await fetch(`https://myways-blog-by-ak.herokuapp.com/api/editpost?postId=${postDetail?.postId}`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': ' application/json',

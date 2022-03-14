@@ -12,7 +12,7 @@ function Header() {
     const logout = async () => {
         setCookie('user', null)
         setUser(null)
-        fetch('/api/logout', {
+        fetch('https://myways-blog-by-ak.herokuapp.com/api/logout', {
             method: 'DELETE',
             headers: {
                 'Content-Type': ' application/json',
