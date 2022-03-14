@@ -12,7 +12,7 @@ function Header() {
     const logout = async () => {
         setCookie('user', null)
         setUser(null)
-        fetch('http://localhost:5000/api/logout', {
+        fetch('/api/logout', {
             method: 'DELETE',
             headers: {
                 'Content-Type': ' application/json',

@@ -105,7 +105,7 @@ function AddPost() {
         e.preventDefault();
         if (user) {
             setIsSending(true)
-            const res = await fetch(`http://localhost:5000/api/editpost?postId=${postDetail?.postId}`, {
+            const res = await fetch(`/api/editpost?postId=${postDetail?.postId}`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': ' application/json',

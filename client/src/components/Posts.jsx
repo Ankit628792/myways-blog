@@ -4,7 +4,7 @@ import Post from './Post.jsx'
 function Posts() {
   const [posts, setPosts] = useState()
   useEffect(() => {
-    fetch('http://localhost:5000/api/allposts', { method: 'GET' }).then(res => res.json()).then(data => setPosts(data))
+    fetch('/api/allposts', { method: 'GET' }).then(res => res.json()).then(data => setPosts(data))
   }, [])
 
   return (

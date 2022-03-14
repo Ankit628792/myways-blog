@@ -12,7 +12,7 @@ function App() {
 
   async function hello() {
     setisLoading(true)
-    const res = await fetch('http://localhost:5000/api/session', {
+    const res = await fetch('/api/session', {
       method: 'GET',
       headers: {
         'Content-Type': ' application/json',
