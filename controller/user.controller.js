@@ -35,9 +35,14 @@ async function removeSessionHandler(req, res) {
 }
 
 async function getUserSessionHandler(req, res) {
-    const userId = get(req, 'user._id')
-    const session = await findSession({ _id: userId })
-    return res.status(200).send(session)
+    try {
+        const userId = get(req, 'user._id')
+        const session = await findSession({ _id: userId })
+        return res.status(200).send(session)
+    } catch (error) {
+        console.log(error);
+        return res.status(400).send({msg: 'ERROR'})
+    }
 }
 
 module.exports = { createUserHandler, createSessionHandler, removeSessionHandler, getUserSessionHandler }
