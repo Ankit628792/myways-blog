@@ -19,6 +19,7 @@ function App() {
         'token': cookies?.user
       }
     })
+    console.log(res)
     if (res.status == 200) {
       const response = await res.json()
       setUser(response)

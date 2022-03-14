@@ -4,7 +4,7 @@ import Post from './Post.jsx'
 function Posts() {
   const [posts, setPosts] = useState()
   useEffect(() => {
-    fetch('https://myways-blog-by-ak.herokuapp.com/api/allposts', { method: 'GET' }).then(res => res.json()).then(data => setPosts(data))
+    fetch('https://myways-blog-by-ak.herokuapp.com/api/allposts', { method: 'GET' }).then(res => res.json()).then(data => setPosts(data)).catch(e => console.log(e))
   }, [])
 
   return (

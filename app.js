@@ -4,7 +4,12 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const connect = require('./conn')
-app.use(cors())
+const corsOptions = {
+    origin: '*',
+    credentials: true,
+    optionSuccessStatus: 200,
+}
+app.use(cors(corsOptions))
 
 const port = process.env.PORT || 5000
 app.use(express.json())
