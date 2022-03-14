@@ -19,8 +19,8 @@ function SinglePost() {
   const [data, setData] = useState({ message: '' })
   const { postId } = useParams()
   useEffect(() => {
-    fetch(`/api/singlepost?postId=${postId.slice(1, postId.length)}`, { method: 'GET' }).then(res => res.json()).then(data => setPost(data))
-    fetch(`/api/post/comment?postId=${postId.slice(1, postId.length)}`, { method: 'GET' }).then(res => res.json()).then(data => setComments(data))
+    fetch(`/api/singlepost?postId=${postId?.slice(1, postId?.length)}`, { method: 'GET' }).then(res => res.json()).then(data => setPost(data))
+    fetch(`/api/post/comment?postId=${postId?.slice(1, postId?.length)}`, { method: 'GET' }).then(res => res.json()).then(data => setComments(data))
   }, [postId])
 
   const delPost = async () => {

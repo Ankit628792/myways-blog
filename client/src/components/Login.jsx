@@ -25,7 +25,6 @@ function Login() {
             },
             body: JSON.stringify(data)
         })
-        console.log(res)
         if (res.status == 200) {
             const response = await res.json()
             setCookie("user", response?.token, {

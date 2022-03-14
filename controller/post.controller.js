@@ -23,7 +23,6 @@ async function createPostHandler(req, res) {
 async function updatePostHandler(req, res) {
     const userId = get(req, 'user._id')
     const postId = get(req, 'query.postId')
-    console.log(userId, postId)
     const update = req.body
     const post = await findPost({ postId: postId })
     if (!post) return res.sendStatus(404)

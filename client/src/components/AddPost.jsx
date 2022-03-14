@@ -28,7 +28,7 @@ function AddPost() {
     const { postId } = useParams()
 
     useEffect(() => {
-        fetch(`http://localhost:5000/api/singlepost?postId=${postId.slice(1, postId.length)}`, { method: 'GET' }).then(res => res.json()).then(data => setPostDetail(data))
+        fetch(`/api/singlepost?postId=${postId?.slice(1, postId?.length)}`, { method: 'GET' }).then(res => res.json()).then(data => setPostDetail(data))
     }, [postId])
 
     const uploadImage = async () => {
@@ -76,7 +76,7 @@ function AddPost() {
             const image_url = await uploadImage()
             if (image_url) {
                 setIsSending(true)
-                const res = await fetch('http://localhost:5000/api/post', {
+                const res = await fetch('/api/post', {
                     method: 'POST',
                     headers: {
                         'Content-Type': ' application/json',
