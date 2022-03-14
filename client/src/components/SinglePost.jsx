@@ -19,12 +19,12 @@ function SinglePost() {
   const [data, setData] = useState({ message: '' })
   const { postId } = useParams()
   useEffect(() => {
-    fetch(`https://myways-blog-by-ak.herokuapp.com/api/singlepost?postId=${postId?.slice(1, postId?.length)}`, { method: 'GET' }).then(res => res.json()).then(data => setPost(data))
-    fetch(`https://myways-blog-by-ak.herokuapp.com/api/post/comment?postId=${postId?.slice(1, postId?.length)}`, { method: 'GET' }).then(res => res.json()).then(data => setComments(data))
+    fetch(`/api/singlepost?postId=${postId?.slice(1, postId?.length)}`, { method: 'GET' }).then(res => res.json()).then(data => setPost(data))
+    fetch(`/api/post/comment?postId=${postId?.slice(1, postId?.length)}`, { method: 'GET' }).then(res => res.json()).then(data => setComments(data))
   }, [postId])
 
   const delPost = async () => {
-    const res = await fetch(`https://myways-blog-by-ak.herokuapp.com/api/delpost?postId=${post?.postId}`, {
+    const res = await fetch(`/api/delpost?postId=${post?.postId}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': ' application/json',
@@ -45,7 +45,7 @@ function SinglePost() {
     e.preventDefault();
     if (user) {
       setIsSending(true)
-      const res = await fetch('https://myways-blog-by-ak.herokuapp.com/api/post/comment', {
+      const res = await fetch('/api/post/comment', {
         method: 'POST',
         headers: {
           'Content-Type': ' application/json',
