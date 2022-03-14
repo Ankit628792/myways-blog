@@ -1,0 +1,8 @@
+export { default as Header } from './Header'
+export { default as Register } from './Register'
+export { default as Login } from './Login'
+export { default as Posts } from './Posts'
+export { default as SinglePost } from './SinglePost'
+export { default as AddPost } from './AddPost'
+export { default as Footer } from './Footer'
+export { default as Loader } from './Loader'
