@@ -65,7 +65,7 @@ function SinglePost() {
 
   if (!post) return <Loader />
   return (
-    <div className='max-w-4xl mx-auto bg-gray-50 my-5'>
+    <div className='max-w-4xl mx-auto my-5'>
       <div><Toaster position="top-center" reverseOrder={true} /></div>
       {post?.user == user?._id && <div className='w-full flex items-center justify-center gap-x-10 mb-5'>
         <button onClick={() => navigate(`/post/edit:${post?.postId}`)} className='px-5 py-2 text-lg font-medium text-white bg-primary rounded-3xl bg-hover transition-all duration-150 ease-out cursor-pointer'>
